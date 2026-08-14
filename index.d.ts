@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,20 +16,29 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
 
-var Uint64 = require( '@stdlib/number-uint64-ctor' );
-var Complex128 = require( '@stdlib/complex-float64-ctor' );
-var isUint64 = require( './../lib' );
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
 
-console.log( isUint64( new Uint64( 1234 ) ) );
-// => true
+import { Uint64 } from '@stdlib/types/number';
 
-console.log( isUint64( new Complex128( 3.0, 1.0 ) ) );
-// => false
+/**
+* Tests if a value is an unsigned 64-bit integer.
+*
+* @param value - value to test
+* @returns boolean indicating if a value is an unsigned 64-bit integer
+*
+* @example
+* var Uint64 = require( '@stdlib/number-uint64-ctor' );
+*
+* var x = new Uint64( 1234 );
+*
+* var bool = isUint64( x );
+* // returns true
+*/
+declare function isUint64( value: any ): value is Uint64;
 
-console.log( isUint64( {} ) );
-// => false
 
-console.log( isUint64( null ) );
-// => false
+// EXPORTS //
+
+export = isUint64;
